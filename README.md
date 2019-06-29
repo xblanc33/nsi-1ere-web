@@ -25,8 +25,8 @@ Pour couvrir le programme voici la séquence que je propose.
 
 1. Fonctionnement d'un site web (de bout en bout)
 2. HTML ou comment structurer l'information contenue dans un site web
-3. Interaction Utilisateur / Navigateur Web 
-4. Interaction Navigateur Web / Serveur Web
+3. Interaction Utilisateur / Navigateur Web, exploitation de JavaScript du DOM et des Event
+4. Interaction Navigateur Web / Serveur Web, comment collaborent le client et le serveur ?
 
 
 Pour aller plus loin, on pourra traiter des points suivants:
