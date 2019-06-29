@@ -1,10 +1,8 @@
-# nsi-1ere-web
-
-Ensemble de ressources pour NSI (Numérique et Sciences Informatiques) 
+# Numérique et Sciences Informatiques (Web)
 
 Programme de 1ère 
 
-Section : Interactions entre l’homme et la machine sur le Web
+Interactions entre l’homme et la machine sur le Web
 
 ## Analyse du programme
 
@@ -19,6 +17,23 @@ La figure suivante illustre les deux points du programme. On voit (1) les intera
 Le cas des formulaires est une façon de montrer les interactions de bout en bout.
 
 ![Interactions dans le web](./img/interactions.png)
+
+
+## Séquence pédagogique
+
+Pour couvrir le programme voici la séquence que je propose. 
+
+1. Fonctionnement d'un site web (de bout en bout)
+2. HTML ou comment structurer l'information contenue dans un site web
+3. Interaction Utilisateur / Navigateur Web 
+4. Interaction Navigateur Web / Serveur Web
+
+
+Pour aller plus loin, on pourra traiter des points suivants:
+5. Préservation de la vie privée sur le web : les cookie
+6. Authentification et confidentialité sur le web : HTTPS et autres mécanismes
+7. Le style des pages web avec CSS
+
 
 ## Rappel du programme
 
