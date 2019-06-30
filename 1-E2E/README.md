@@ -50,3 +50,25 @@ Une URL identifie :
 * un serveur web
 * un port du serveur web (rare)
 * une ressource du serveur web (sinon c'est la ressource par défaut qui sera accédée)
+
+Lorsqu'on saisie une URL dans la barre de navigation du navigateur, on demande au navigateur d'afficher la ressource ciblée.
+
+
+## Chargement de la première ressource
+
+Saisir une URL dans la barre de navigation est une interaction entre l'utilisateur et le navigateur web.
+
+Une fois cette saisie réalisée, le navigateur va alors décoder l'URL afin d'envoyer une requête HTTP vers le serveur. 
+
+Le serveur web va alors recevoir cette requête et y répondre en envoyant la ressource correspondante.
+
+Le navigateur va alors afficher la ressource afin que l'utilisateur puisse la voir.
+
+La figure suivante présente cette suite d'intéractions :
+
+![](./img/premiereRequete.png)
+
+
+La figure illustre le rôle joué par le navigateur. Il gère les intéractions avec l'utilisateur et les traduit en échanges avec le serveur. De plus, son rôle est d'afficher les ressources.
+
+Le serveur web quant à lui gère les ressources et les communique au navigateur. 
