@@ -4,6 +4,8 @@ L'objectif est ici de montrer qu'un site web est constitué de plusieurs ressour
 Ces ressources sont gérées par le serveur web qui les rend accessibles via le protocole HTTP.
 Un utilisateur utilise son navigateur et interagit avec celui-ci. Le navigateur présente (affiche) les ressources à l'utilisateur. Selon les interactions réalisées par l'utilisateur, le navigateur interagit avec le serveur pour accéder à de nouvelles ressources et les afficher.
 
+[Exercices](EXERCICES.md)
+
 ## Au commencement il y a l'URL
 
 (cette section n'apparatient pas au programme mais il me semble intéressant de la présenter ici)
