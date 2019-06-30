@@ -54,11 +54,11 @@ Une URL identifie :
 Lorsqu'on saisie une URL dans la barre de navigation du navigateur, on demande au navigateur d'afficher la ressource ciblée.
 
 
-## Chargement de la première ressource
+## Chargement d'une ressource
 
-Saisir une URL dans la barre de navigation est une interaction entre l'utilisateur et le navigateur web.
+Saisir une URL dans la barre de navigation pour accéder à une ressoruce est une interaction entre l'utilisateur et le navigateur web.
 
-Une fois cette saisie réalisée, le navigateur va alors décoder l'URL afin d'envoyer une requête HTTP vers le serveur. 
+Une fois cette saisie réalisée, le navigateur va alors décoder l'URL afin d'envoyer une requête HTTP vers le serveur.
 
 Le serveur web va alors recevoir cette requête et y répondre en envoyant la ressource correspondante.
 
@@ -68,7 +68,27 @@ La figure suivante présente cette suite d'intéractions :
 
 ![](./img/premiereRequete.png)
 
+La figure illustre le rôle joué par le navigateur. Il gère les intéractions avec l'utilisateur et les traduit en échanges avec le serveur. De plus, il est responsable de l'affichage des ressources.
 
-La figure illustre le rôle joué par le navigateur. Il gère les intéractions avec l'utilisateur et les traduit en échanges avec le serveur. De plus, son rôle est d'afficher les ressources.
+Le serveur web quant à lui gère les ressources et les communique au navigateur.
 
-Le serveur web quant à lui gère les ressources et les communique au navigateur. 
+## Chargement d'une ressource HTML
+
+Si les ressources accédées en saisissant leur URL sont des images ou  des vidéo, le navigateur se contente de les afficher en plein écran.
+
+Si les ressources sont des fichier texte, le navigateur affiche le texte.
+
+Si les ressources sont des fichier binaire (fichier .zip ou autre), le navigateur propose de les sauvegarder sur le disque.
+
+Par contre, si les ressources sont des pages HTML, alors le navigateur va non seulement les interpréter pour les afficher mais il va surtout récupérer toutes les autres ressources liéées (feuille de style CSS, images, vidéo, script JavaScript). Pour ce faire, il va envoyer plusieurs requêtes HTTP et mettre à jours l'affichage. Plus précisément, il fera un premier affichage dès qu'il aura reçu les feuilles de styles CSS. Il fera des mises à jours de cet affichage lorsqu'il recevra les ressources liées.
+
+La figure suivante montre les intéractions réalisées pour afficher une page HTML. On voit que le navigateur effectue plusieurs requêtes HTTP.
+
+![](./img/requeteHTML.png)
+
+
+## Interaction avec une page HTML chargée
+
+Une fois que l'utilisateur a demandé l'affichage d'une page HTML et que celle-ci a été chargé par le navigateur, il peut interagir avec celle-ci (cliquer, saisir du texte, etc.).
+
+Ces interactions sont gérées par le navigateur. Plus précisément, pour chaque interaction le navigateur emet un Event JavaScript qui peut être capturé (code JavaScript).
