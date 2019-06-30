@@ -1,8 +1,6 @@
 # Numérique et Sciences Informatiques (Web)
 
-Programme de 1ère 
-
-Interactions entre l’homme et la machine sur le Web
+Programme de 1ère - Interactions entre l’homme et la machine sur le Web
 
 ## Analyse du programme
 
@@ -10,7 +8,7 @@ Ma lecture personnelle est que le programme met l'emphase sur deux points :
 1. Les interactions entre l'utilisateur et le navigateur web. Il s'agit alors de comprendre comment l'utilisateur interagit avec un site web (essentiellement en cliquant) et de savoir comment ces interactions se traduisent dans le code en évennements JavaScript.
 2. Les interactions entre le navigateur web et le serveur web. Il s'agit alors de comprendre que le navigateur interagit avec le serveur web grâce au protocole HTTP. Il émet alors des requêtes et recoit des réponses. L'objectif est alors de savoir comment coder l'emission et la reception de ces messages, du côté du serveur comme du côté du client.
 
-Enfin le programme apporte une importance particulière sur les formulaires web. Ceux-ci permettent à l'utlisateur de saisir des informations qui seront véhiculées jusqu'au serveur qui pourra alors effectuer des traitements adéquate.
+Enfin le programme apporte une importance particulière aux formulaires web. Ceux-ci permettent à l'utlisateur de saisir des informations qui seront saisies par l'utilisateur et qui seront véhiculées jusqu'au serveur. Celui-ci pourra alors effectuer des traitements adéquates.
 
 
 La figure suivante illustre les deux points du programme. On voit (1) les interactions entre l'utilisateur et le navigateur web et (2) les interactions entre le navigateur web et le serveur web.
@@ -23,16 +21,17 @@ Le cas des formulaires est une façon de montrer les interactions de bout en bou
 
 Pour couvrir le programme voici la séquence que je propose. 
 
-1. Fonctionnement d'un site web (de bout en bout)
-2. HTML ou comment structurer l'information contenue dans un site web
-3. Interaction Utilisateur / Navigateur Web, exploitation de JavaScript du DOM et des Event
-4. Interaction Navigateur Web / Serveur Web, comment collaborent le client et le serveur ?
+1. [Fonctionnement d'un site web de bout en bout](./1-E2E/README.md)
+2. [HTML ou comment structurer l'information contenue dans un site web](./2-HTML/README.md)
+3. Interaction Utilisateur / Navigateur Web, exploitation de JavaScript (DOM et Event)
+4. Interaction Navigateur Web / Serveur Web, comment le client interagit avec le serveur ?
 
 
 Pour aller plus loin, on pourra traiter des points suivants:
-5. Préservation de la vie privée sur le web : les cookie
-6. Authentification et confidentialité sur le web : HTTPS et autres mécanismes
-7. Le style des pages web avec CSS
+* Le style des pages web avec CSS
+* Préservation de la vie privée sur le web : les cookie
+* Authentification et confidentialité sur le web : HTTPS et autres mécanismes
+
 
 
 ## Rappel du programme
