@@ -8,7 +8,7 @@ Un utilisateur utilise son navigateur et interagit avec celui-ci. Le navigateur 
 
 (cette section n'apparatient pas au programme mais il me semble intéressant de la présenter ici)
 
-Après avoir démarré son navigateur, la première chose qu'un utilisateur fait pour accéder à un site web et de **saisir l'URL du site**.
+Après avoir démarré son navigateur, la première chose qu'un utilisateur fait pour accéder à un site web est de **saisir l'URL du site**.
 
 L'URL d'un site c'est ce que l'on écrit dans la barre de navigation du navigateur (figure suivante)
 
@@ -22,23 +22,24 @@ Voici quelques exemples d'URL que vous pouvez utiliser:
 
 Une URL est composée au moins de 2 parties :
 * Le **protocole** (http://) ou (https://)
-* Le **nom du serveur web** (www.education.gouv.fr)
+* Le **nom du serveur web** (par exemple www.education.gouv.fr)
 
-Certaines URL contiennent une troisième partie :
-* Le **nom de la ressource**  (cid138218/au-bo-special-du-22-janvier-2019-programmes-d-enseignement-du-lycee-general-et-technologique.html)
+Certaines URL contiennent une troisième partie pour identifier la ressource à afficher :
+* Le **nom de la ressource**  à afficher (par exemple /cid138218/au-bo-special-du-22-janvier-2019-programmes-d-enseignement-du-lycee-general-et-technologique.html)
 
-Il y a même une quatrième partie qui est parfois utilisée dans une URL mais cela est beaucoup plus rare (essentiellement en mode programmation en local)
+Il y a même une quatrième partie, le port du serveur, qui est parfois utilisée dans une URL mais cela est beaucoup plus rare (essentiellement en mode programmation en local)
 * le **numéro du port**, ici 3000 (http://localhost:3000/index.html) 
 
 Sur le web, seuls les protocoles HTTP et HTTPS sont utilisés. Ces protocoles sont standards. Ils précisent comment sont réalisés les échanges entre un navigateur et un serveur web. HTTPS est la version sécurisée de HTTP.
 
-Un serveur web est tout le temps connecté à internet. Il a donc une adresse IP qui est tout le temps joignable.
-Pour le retrouver facilement son adresse IP est lié à un nom. C'est le système DNS (Domain Naming Service) qui fait le lien entre une adress IP et son nom. Par exemple l'adresse IP de google est 216.58.209.228. Si vous écrivez cette URL http://216.58.209.228 vous irez sur http://www.google.com.
+Un serveur web est tout le temps connecté à internet. Il a donc une adresse IP qui est, en principe, tout le temps accessible.
 
-Les navigateurs web sont relativement souples car, si vous ne saisissez pas le protocole, ils le font pour vous. 
-Par exemple, si vous saisissez (www.google.com) dans la barre de navigation, votre navigateur comprendra que le protocole est HTTP (voir même HTTPS).
+Néanmoins pour le retrouver facilement et pour ne pas avoir à retenir son adresse IP, les serveur web ont aussi un nom. C'est le système DNS (Domain Naming Service) qui fait le lien entre une adress IP et le nom des serveurs. Par exemple l'adresse IP de google est 216.58.209.228. Si vous écrivez cette URL http://216.58.209.228 vous irez sur http://www.google.com.
 
-Les serveurs web quant à eux disposent tous d'une **ressource par défaut**. 
+Les navigateurs web sont relativement souples car, si vous ne saisissez pas le protocole, ils le font pour vous.
+Par exemple, si vous saisissez (www.google.com) dans la barre de navigation, votre navigateur comprendra que le protocole est HTTPS.
+
+Les serveurs web disposent tous d'une **ressource par défaut**.
 Si vous saisissez uniquement le protocole et le nom du serveur, c'est cette ressource par défaut que vous demandez (souvent c'est la page principale du site web - index.html).
 
 Les navigateurs récents sont même directement liés à un moteur de recherche (Google, Bing, etc.). Si vous tappez autre chose qu'une URL dans la barre de navigation, ils considèrent que vous avez tapé une question et ils vous présentent la réponse émise par le moteur de recherche.
@@ -51,8 +52,7 @@ Une URL identifie :
 * un port du serveur web (rare)
 * une ressource du serveur web (sinon c'est la ressource par défaut qui sera accédée)
 
-Lorsqu'on saisie une URL dans la barre de navigation du navigateur, on demande au navigateur d'afficher la ressource ciblée.
-
+Lorsqu'on saisie une URL dans la barre de navigation du navigateur, on demande au navigateur d'afficher la ressource ciblée (celle par défaut si aucun nom de ressource n'est précisé).
 
 ## Chargement d'une ressource
 
@@ -60,35 +60,71 @@ Saisir une URL dans la barre de navigation pour accéder à une ressoruce est un
 
 Une fois cette saisie réalisée, le navigateur va alors décoder l'URL afin d'envoyer une requête HTTP vers le serveur.
 
-Le serveur web va alors recevoir cette requête et y répondre en envoyant la ressource correspondante.
+Le serveur web va alors recevoir cette requête et y répondre en envoyant la ressource correspondante à l'URL.
 
-Le navigateur va alors afficher la ressource afin que l'utilisateur puisse la voir.
+Dès qu'il aura reçu la réponse, le navigateur va alors afficher la ressource afin que l'utilisateur puisse la voir.
 
 La figure suivante présente cette suite d'intéractions :
 
 ![](./img/premiereRequete.png)
 
-La figure illustre le rôle joué par le navigateur. Il gère les intéractions avec l'utilisateur et les traduit en échanges avec le serveur. De plus, il est responsable de l'affichage des ressources.
+La figure illustre le rôle joué par le navigateur. Il gère les intéractions avec l'utilisateur et les traduit en échanges avec le serveur.
 
-Le serveur web quant à lui gère les ressources et les communique au navigateur.
+Le serveur gère les ressources et les communique au navigateur.
+
+Enfin, le navigateur est responsable de l'affichage des ressources reçues.
+
+Si les ressources sont des images ou  des vidéo, le navigateur se contente de les afficher.
+
+Si les ressources sont des fichiers texte, le navigateur affiche le texte.
+
+Si les ressources sont des fichiers binaires (fichier .zip ou autre), le navigateur propose de les sauvegarder sur le disque.
+
+### A retenir
+
+Un navigateur permet d'afficher des ressources qui sont gérées par un serveur web.
+
+L'utilisateur interagit avec le navigateur qui lui communique avec le serveur via le protocole HTTP.
 
 ## Chargement d'une ressource HTML
 
-Si les ressources accédées en saisissant leur URL sont des images ou  des vidéo, le navigateur se contente de les afficher en plein écran.
+Si le navigateur reçoit une page HTML, alors il va l'interpréter pour l'afficher.
+Cela veut dire qu'il va récupérer toutes les autres ressources liéées à la page (feuille de style CSS, images, vidéo, script JavaScript). Pour ce faire, il va envoyer plusieurs requêtes HTTP et mettre à jours l'affichage. 
 
-Si les ressources sont des fichier texte, le navigateur affiche le texte.
-
-Si les ressources sont des fichier binaire (fichier .zip ou autre), le navigateur propose de les sauvegarder sur le disque.
-
-Par contre, si les ressources sont des pages HTML, alors le navigateur va non seulement les interpréter pour les afficher mais il va surtout récupérer toutes les autres ressources liéées (feuille de style CSS, images, vidéo, script JavaScript). Pour ce faire, il va envoyer plusieurs requêtes HTTP et mettre à jours l'affichage. Plus précisément, il fera un premier affichage dès qu'il aura reçu les feuilles de styles CSS. Il fera des mises à jours de cet affichage lorsqu'il recevra les ressources liées.
+Pour être plus précis le navigateur réalise plusieurs choses en parallèle. Il fera un premier affichage dès qu'il aura reçu la page HTML et les feuilles de styles CSS liées. En parallèle, il enverra les requêtes pour récupérer les autres éléments liées à la page et fera des mises à jours de l'affichage lorsqu'il les recevra.
 
 La figure suivante montre les intéractions réalisées pour afficher une page HTML. On voit que le navigateur effectue plusieurs requêtes HTTP.
 
 ![](./img/requeteHTML.png)
 
+### A retenir
+
+Pour afficher une page HTML, le navigateur va emettre plusieurs requêtes avec le serveur web. Ces requêtes lui permettront d'obtenir toutes les ressources liées à la page HTML (style CSS, image, vidéo, script, etc.).
+
+L'affichage d'une page HTML commence même si le navigateur n'a pas encore téléchargé l'intégralité de la page. 
+Néanmoins, il a besoin de l'intégralité des feuilles de style CSS pour commencer son affichage. 
 
 ## Interaction avec une page HTML chargée
 
-Une fois que l'utilisateur a demandé l'affichage d'une page HTML et que celle-ci a été chargé par le navigateur, il peut interagir avec celle-ci (cliquer, saisir du texte, etc.).
+Une fois que l'utilisateur a demandé l'affichage d'une page HTML et que celle-ci a été chargé et affichée par le navigateur, il peut interagir avec celle-ci (cliquer, saisir du texte, etc.).
 
-Ces interactions sont gérées par le navigateur. Plus précisément, pour chaque interaction le navigateur emet un Event JavaScript qui peut être capturé (code JavaScript).
+Ces interactions sont gérées par le navigateur. Plus précisément, pour chaque interaction le navigateur emet un **Event JavaScript** qui peut être capturé et donner l'exécution d'un traintement (codé en JavaScript).
+
+Différents traitements peuvent être exécutés en réponse à un évènement d'intéraction.
+* envoyer une requête vers le serveur et demander l'affichage d'une nouvelle page HTML
+* envoyer une requête vers le serveur et demander des informations qui seront intégrées à la page actuelle
+* changer la page HTML sans même envoyer de requête vers le serveur
+* lire une vidéo ou une chanson
+* etc.
+
+La figure suivante montre des interactions types.
+
+![](./img/interactionsType.png)
+
+Il est important de noter que les interactions sont gérées de manière asynchrone par le navigateur. Cela veut dire qu'elles ne sont par réalisées dans l'ordre. Il se peut donc que le traitement de la première interactions soit réalisé après que l'utilisateur ait effectué d'autres interactions.
+
+### A retenir
+
+Les interactions de l'utilisateur sont gérées par le navigateur. Pour chaque interaction un évènement est créé. Celui peut donner l'exécution d'un traitement (codé en JavaScript).
+
+Les traitements associés aux interactions peuvent être de différents types (demander au serveur une nouvelle page et l'afficher, demander au serveur des nouvelles données et les intégrer à la page, effectuer des modifications de la page sans réaliser de communication avec le serveur, etc.)
