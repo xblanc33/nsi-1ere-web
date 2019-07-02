@@ -2,6 +2,8 @@
 
 Programme de 1ère - Interactions entre l’homme et la machine sur le Web
 
+Ce cours est fortement inspiré du [cours que nous avons donné à l'Université de Bordeaux](https://moodle1.u-bordeaux.fr/course/view.php?id=4719)
+
 ## Analyse du programme
 
 Ma lecture personnelle est que le programme met l'emphase sur deux points :
