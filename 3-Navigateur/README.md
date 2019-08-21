@@ -59,7 +59,7 @@ window.addEventListener('load', function () {
 });
 ```
 
-Enfin, notons qu'on peut ajouter l'attribue `differ` à la balise `<script>` (`<script differ>`) pour dire au navigateur d'exécuter après le chargement du DOM mais juste avant que l'événement `load` ne soit émit. 
+Enfin, notons qu'on peut ajouter l'attribue `defer` à la balise `<script>` (`<script defer>`) pour dire au navigateur d'exécuter après le chargement du DOM mais juste avant que l'événement `load` ne soit émit (déféré).
 
 ## DOM Element
 
@@ -74,9 +74,8 @@ Les API des éléments DOM et du document offrent de nombreuses méthodes pour p
 Par exemple, les méthodes suivantes permettent de retrouver un ou plusieurs éléments de la page web :
 * getElementById(_id_) : pour retrouver un élément à partir de son identifiant.
 * getElementsByTagName(_tagName_) : pour retrouver tous les éléments à partir d'un nom de balise.
-* querySelector(_cssSelector_) : pour retrouver un élément qui correspond à un selecteur CSS
-* querySelectorAll(_cssSelector_) : pour retrouver tous les éléments qui correspondent à un selecteur CSS.
-
+* querySelector(_cssSelector_) : pour retrouver un élément qui correspond à un [selecteur CSS](https://www.w3schools.com/cssref/css_selectors.asp)
+* querySelectorAll(_cssSelector_) : pour retrouver tous les éléments qui correspondent à un [selecteur CSS](https://www.w3schools.com/cssref/css_selectors.asp).
 
 Les méthodes suivantes quant à elles permettent d'accéder aux valeurs des éléments et même de les remplacer:
 * getAttributeNames() : pour retrouver tous les noms des attributs portés par un élément
@@ -103,14 +102,18 @@ Notez qu'en utilisant la console dans les outils de développement de Chrome, il
 Par exemple, si on écrit ``document.body.innerHTML = "VIDE";`` dans la console, le _body_ de la page web sera dynamiquement modifié et contiendra la chaîne de caractères : "VIDE".
 La page web affichée par le navigateur deviendra alors toute blanche et affichera cette chaîne de caractères.
 
-
 ## DOM Event
 
 Le DOM émet des événements (DOM Event) lorsque ses éléments (DOM Element) subissent des interactions.
 
-Par exemple, un évènement de type `click` est émis à chaque fois que l'utilisateur clique sur l'élément.
+Par exemple, un évènement de type `click` est émis à chaque fois que l'utilisateur clique sur un élément.
 
 Grâce à JavaScript, on peut ajouter des traitements (fonctions _callbacks_) qui seront exécutés lorsqu'un événement sera émis.
+
+Il existe deux façons similaires pour ajouter une _callBack_ à un élément _cible_ pour un _type_ d'événement donné :
+* _cible_.on_type_ = _callBack_ : Par exemple, `window.onload = () => {console.log('page chargée')}`)
+* _cible.addEventListener('_type', _callBack) : Par exemple, `window.addEventListener('load', () => {console.log('page chargée')}`)
+
 Le code suivant ajoute par exemple la carte "01.BMP" dans l'élément d'id `"mes-cartes"` à chaque fois que l'on clique sur le bouton dont l'id est `"ajout-carte"`.
 
 ```javascript
@@ -123,19 +126,3 @@ clickAjoutCarte() {
 document.getElementById("ajout-carte").onclick(clickAjoutCarte);
 ```
 
-### Glisser-Déposer (_Drag and Drop_)
-
-Depuis la version 5 d'HTML, tout élément peut devenir déplaçable en mettant son attribut `draggable` à `true`. 
-
-Il est ensuite nécessaire de spécifier trois _callbacks_ pour trois évènements différents :
-
-* `ondragstart` : émis lorsque l'utilisateur clique sur l'élément à déplacer ; la _callback_ associée spécifie la donnée à déplacer en appelant la fonction `dataTransfer.setData()`, typiquement l'id de l'élément à déplacer.
-* `ondragover` : émis lorsque l'élément déplacé survole un autre éléments ; pour autoriser le dépôt (interdit par défaut), la _callback_ associée appelle la fonction `event.preventDefault()`.
-* `ondrop` : émis lorsque l'élément déplacé est déposé sur un autre élément ; la _callback_ associée utilise la fonction `dataTransfer.getData()` pour récupérer l'id de l'élément déplacé et modifie effectivement le DOM.
-
-Un exemple minimal est présenté sur [cette page](https://www.w3schools.com/html/html5_draganddrop.asp).
-
-
-## Mise en pratique
-
-Continuez vers [la mise en pratique](./exo.md) 

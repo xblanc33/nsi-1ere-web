@@ -243,7 +243,7 @@ D'autres mécanismes facilitant l'écriture de code asynchrone ont été propos�
 JavaScript supporte de nombreux évènements. Un événement est déclenché par l'interpreteur (quand l'utilisateur clique sur un bouton, lorsqu'une requête a été envoyé, qu'une réponse arrive, qu'un traitement est terminé, etc.).
 Chaque événement est caractérisé par un objet (l'événement). Cet objet a de nombreuses propriétés qui permettent d'obtenir plusieurs informations sur l'événement (quand il a eu lieux, quelle était la cible,etc.).
 
-Pour réagir aux événements, JavaScript utilise les __callBack__ et l'asynchronisme. L'idée est d'enregistrer des _callBacks_ sur des type d'événements. Celles-ci seront appelées lors que les événements de ce type seront émis. 
+Pour réagir aux événements, JavaScript utilise les __callBack__ et l'asynchronisme. L'idée est d'enregistrer des _callBacks_ sur des type d'événements. Celles-ci seront appelées lors que les événements de ce type seront émis.
 
 Le code suivant illustre ce propos avec l'ajout d'une __callBack__ anonyme sur l'événement de type `load` dont la cible est la fenêtre principale d'une page HTML (`window`). 
 
