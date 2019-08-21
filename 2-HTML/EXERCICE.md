@@ -23,3 +23,5 @@ L'objectif est de créer un lien entre deux pages HTML.
 
 1. Avec votre éditeur de code, ouvrez la page `blackjack.html` du répertoire `./html/bj` puis modifiez-la ajouter une image représentant le roi de coeur.
 2. Toujours avec votre éditeur de code, ajoutez dans la page `index.html` un lien qui pointe vers la page `blackjack.html`
+
+Le répertoire correction contient la correction de cet exercice.
