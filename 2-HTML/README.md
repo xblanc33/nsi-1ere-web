@@ -4,7 +4,7 @@ Tous les sites web sont composés de pages HTML.
 
 Le langage HTML est le langage qui permet d'éditer (fond et forme) les pages web.
 
-[Exercices](./EXERCICE.md)
+[Exercices](./EXERCICES.md)
 
 ## Contenu d'une page HTML minimaliste
 

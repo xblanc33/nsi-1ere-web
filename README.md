@@ -32,7 +32,6 @@ Pour couvrir le programme voici la séquence que je propose:
 3. [Interaction Utilisateur / Navigateur Web, exploitation de JavaScript (DOM et Event)](./3-Navigateur/README.md)
 4. Interaction Navigateur Web / Serveur Web, comment le client interagit avec le serveur ?
 
-
 Pour aller plus loin, on pourra traiter des points suivants:
 * Le style des pages web avec CSS
 * Préservation de la vie privée sur le web : les cookie
