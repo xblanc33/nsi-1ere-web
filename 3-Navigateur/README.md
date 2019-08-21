@@ -1,10 +1,10 @@
 # 3 - Navigateur
 
-## HTML et JS
-
 Tous les navigateurs web exécutent du code JavaScript ([vous trouverez ici une description courte des concepts de base de ce langage](./JavaScript.md)).
 
 JavaScript gère les intéractions avec l'utilisateur et permet de rendre la page dynamique. Il est aussi utilisé pour envoyer des requêtes vers le serveur et recevoir les réponses.
+
+[Exercices](./EXERCICES.md)
 
 ## Un interpreteur par page web (chargement du DOM)
 
