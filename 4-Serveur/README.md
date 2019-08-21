@@ -54,7 +54,7 @@ Du coup, si votre requête est idempotente, il vaut mieux privilégier la requê
 
 ### En HTML avec la balise `<a>`
 
-Si votre page HTML contient une balise `<a>` dont la `target` est une ressource externe à la page (elle n'est donc pas une ancre), alors un click sur le lien fera emettre une requête `GET` par votre navigateur avec `target` comme `URL`.
+Si votre page HTML contient une balise `<a>` dont le `href` est une ressource externe à la page (elle n'est donc pas une ancre), alors un click sur le lien fera emettre une requête `GET` par votre navigateur avec `href` comme `URL`.
 
 Par exemple :
 ```html
