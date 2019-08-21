@@ -18,7 +18,7 @@ Tout navigateur web dispose d'un interpreteur JavaScript et peut ainsi exécuter
 
 Notons enfin que JavaScript est un standard ECMA : [ECMA Script](https://developer.mozilla.org/fr/docs/Web/JavaScript/Language_Resources). On comprend alors qu'il y a des différences entre le standard et les interpréteurs (c.f. [compatibilité NodeJS / ECMA ](https://node.green/)).
 
-## Typage dynamique
+## Typage dynamique des variables
 
 En JavaScript les variables sont typées mais le typage est dynamique, c'est à dire qu'il change lors de l'exécution.
 

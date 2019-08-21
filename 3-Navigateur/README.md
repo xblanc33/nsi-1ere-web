@@ -10,13 +10,13 @@ JavaScript gère les intéractions avec l'utilisateur et permet de rendre la pag
 
 D'un point de vue technique, on considère que tout navigateur démarre un nouvel interpréteur dès qu'il commence à recevoir une nouvelle page web.
 
-Au fur et à mesure qu'il reçoit les balises de la page web, il construit les objets JavaScript du DOM qui correspondent à ces balises HTML.
+Au fur et à mesure qu'il reçoit les balises de la page web, il construit les objets JavaScript du DOM qui leur correspondent.
 
-A la fin du chargement de la page web, la mémoire de l'interpréteur contient donc tous les objets JavaScript qui correspondent à toutes les balises de la page. Ces objets sont structurés sous forme d'un arbre, c'est ce qu'on appelle le DOM.
+A la fin du chargement de la page web, la mémoire de l'interpréteur contient donc tous les objets JavaScript qui correspondent à toutes les balises de la page. Ces objets sont structurés sous forme d'un arbre, c'est ce qu'on appelle le DOM. A la racine de cet arbre on trouve le `document`.
 
 ## Exécution des scripts
 
-Si du code JavaScrip est intégré à la page HTML ou s'il est référencé, l'interpréteur va exécuter ce code lors du chargement du DOM.
+Si du code JavaScrip est intégré à la page HTML ou s'il est référencé, l'interpréteur va exécuter ce code pendant le chargement du DOM.
 
 Pour ajouter du code JavaScript dans une page HTML, on peut le faire à l'intérieur d'une balise `<script>`:
 
@@ -38,11 +38,7 @@ avec `script.js` :
 console.log('Ce code a été exécuté');
 ```
 
-En utilisant la console dans les outils de développement de Chrome, il est possible d'accéder à l'interpréteur de la page HTML. C'est là qu'on verra les messages écrits sur la console (`console.log`).
-
-Il est aussi possible de saisir du code JavaScript dans la console et de l'exécuter. Cela est fortement utile pour tester un bout de code lors de la phase de développement de la page web.
-
-Comme le code JavaScript est exécuté dès que le navigateur peut lire le script (ou peu de temps après), il se peut que le code soit exécuté avant que le navigateur n'ait chargé toute la page HTML. Si on veut que toute la page soit chargée avant d'exécuter le code, il faut alors exploiter les [événements DOM](#DOM-Event) et plus particulièrement l'événement de type `load`.
+Comme le code JavaScript est exécuté dès que le navigateur peut lire la balise `script` (ou peu de temps après), il se peut que le code soit exécuté avant que le navigateur n'ait chargé toute la page HTML. Si on veut que toute la page soit chargée avant d'exécuter le code, il faut alors exploiter les [événements DOM](#DOM-Event) et plus particulièrement l'événement de type `load`.
 
 ```javascript
 window.onload(function() {
@@ -59,7 +55,11 @@ window.addEventListener('load', function () {
 });
 ```
 
-Enfin, notons qu'on peut ajouter l'attribue `defer` à la balise `<script>` (`<script defer>`) pour dire au navigateur d'exécuter après le chargement du DOM mais juste avant que l'événement `load` ne soit émit (déféré).
+Notons qu'on peut ajouter l'attribue `defer` à la balise `<script>` (`<script defer>`) pour dire au navigateur d'exécuter le code après le chargement du DOM mais juste avant que l'événement `load` ne soit émit (déféré).
+
+Enfin, en utilisant la console dans les outils de développement de Chrome, il est possible d'accéder à l'interpréteur de la page HTML. C'est là qu'on verra les messages écrits sur la console (`console.log`).
+
+Il est aussi possible de saisir du code JavaScript dans la console et de l'exécuter. Cela est fortement utile pour tester un bout de code lors de la phase de développement de la page web.
 
 ## DOM Element
 
@@ -67,9 +67,9 @@ Grâce à JavaScript il est possible de manipuler dynamiquement les éléments d
 
 Les éléments DOM sont des objets JavaScript qui proposent des propriétés décrites par leur [API](https://www.w3schools.com/jsref/dom_obj_all.asp).
 
-L'élément racine du DOM est le `document` qui est un éléments DOM mais qui dispose de [propriétés supplémentaires](https://www.w3schools.com/jsref/dom_obj_document.asp).
+L'élément racine du DOM est le `document`. C'est un éléments DOM qui dispose de [propriétés supplémentaires](https://www.w3schools.com/jsref/dom_obj_document.asp).
 
-Les API des éléments DOM et du document offrent de nombreuses méthodes pour parcourir l'arbre DOM et pour effectuer des modifications. 
+Les API des éléments DOM et du document offrent de nombreuses méthodes pour parcourir l'arbre DOM et pour effectuer des modifications.
 
 Par exemple, les méthodes suivantes permettent de retrouver un ou plusieurs éléments de la page web :
 * getElementById(_id_) : pour retrouver un élément à partir de son identifiant.
@@ -87,8 +87,9 @@ d'un élement.
 Enfin, il est possible de construire de nouveaux éléments et de les ajouter au DOM, ou même de supprimer des éléments existant. L'objectif étant de changer le DOM et donc de modifier dynamiquement l'affichage :
 * document.createElement(_tagName_) : pour construire un nouvel élément
 * appendChild(_element_) : pour ajouter un élément fils
+* removeChild(_eleemnt_) : pour supprimer un élément fils
 
-Ainsi  le code suivant illustre cette API en retrouvant dans la page web l'élement HTML dont l'id est `"mondId"` et en y ajoutant une balise `<img>` contenant l'image "02.BMP".
+Le code suivant illustre cette API en retrouvant dans la page web l'élement HTML dont l'id est `"mondId"` et en y ajoutant une balise `<img>` contenant l'image "02.BMP".
 
 ```javascript
 let target = document.getElementById("monId");
@@ -125,4 +126,3 @@ clickAjoutCarte() {
 
 document.getElementById("ajout-carte").onclick(clickAjoutCarte);
 ```
-

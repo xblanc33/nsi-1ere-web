@@ -26,7 +26,7 @@ Par exemple avec https://www.google.com
 
 Essayez des URL qui ne sont pas conformes et observez ce que dit le navigateur.
 * google.com/index.html
-* hhtttp://www.gogoooogle.com
+* hhtttp:/ww.gogoooogle.com
 
 
 ## Ressources non HTML
@@ -61,4 +61,5 @@ Par exemple avec l'URL suivante:
 * www.google.com
 
 Si vous commencez à écrire dans le champs textuel de la recherche, vous pouvez voir avec les outils du développeur que le navigateur envoie des données mais qu'il n'affiche pas une nouvelle page.
+
 Par contre, quand vous validez la recherche une nouvelle page est reçue et affichée (celle-ci contient la réponse à votre recherche)
