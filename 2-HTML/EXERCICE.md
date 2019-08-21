@@ -5,7 +5,7 @@
 L'objectif est de visualiser une page HTML dans un navigateur et de la modifier.
 
 1. À l'aide de Chrome, ouvrez la page `./html/index.html` dans un navigateur.
-2. À l'aide d'un éditeur de code ([vscode](https://code.visualstudio.com) par exemple), ouvrez la page `index.html` et modifiez le titre et le _body_ de la page, puis sauvegardez pour voir les effets de vos modifications dans le navigateur web.
+2. À l'aide d'un éditeur de code ([vscode](https://code.visualstudio.com) par exemple), ouvrez la page `index.html` et modifiez le titre et le `<body>`de la page, puis sauvegardez pour voir les effets de vos modifications dans le navigateur web.
 3. Toujours dans le navigateur, supprimez la balise `html` (ouvrante et fermante) puis sauvegardez. Constatez que Chrome est encore capable de visualiser la page web.
 4. Enfin, vous pouvez essayer de ne pas fermer certaines balises ; vous verrez que Chrome est relativement indulgent.
 5. Valider votre document HTML pour détecter d'éventuelles erreurs avec le [W3C validator](https://validator.w3.org/)

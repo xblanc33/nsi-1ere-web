@@ -4,8 +4,6 @@ Tous les sites web sont composés de pages HTML.
 
 Le langage HTML est le langage qui permet d'éditer (fond et forme) les pages web.
 
-Une page HTML c'est du texte qui commence par un prologue et qui est ensuite structuré par des balises.
-
 [Exercices](EXERCICES.md)
 
 ## Contenu d'une page HTML minimaliste
@@ -78,7 +76,7 @@ Pour ce faire, on pourra leur attacher une ancre (attribut `id`) ou une classe (
 
 ### Les balises `form`, `input`, `button`
 
-Ces balises sont extrêmement utiles car elles servent à créer des formulaires.
+Ces balises sont extrêmement utiles car elles servent à créer des formulaires. 
 
 ```html
 <form action="/cartes" method="post">
@@ -89,7 +87,7 @@ Ces balises sont extrêmement utiles car elles servent à créer des formulaires
 </form>
 ```
 
-Dans cet exemple, ce formulaire contient un champ de saisie de texte et spécifie que la soumission du formulaire (touche entrée) va envoyer une requête POST vers le serveur web (nous expliquerons les détails des formulaires dans la partie 4-Serveur).
+Le formulaire présenté contient un champ de saisie de texte et spécifie que la soumission du formulaire (touche entrée) va envoyer une requête POST vers le serveur web (nous expliquerons les détails des formulaires dans la partie 4-Serveur).
 
 ## Page HTML et arbre DOM
 
