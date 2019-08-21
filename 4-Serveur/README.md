@@ -50,7 +50,7 @@ De fait, si votre requête doit contenir de l'information non textuelle (image, 
 Après, on considère qu'une requête `GET` est idempotente, ce qui veut dire qu'envoyer une fois ou plusieurs fois la requête a le même effet. Cela n'est en principe pas le cas pour les requête `POST`.
 Du coup, si votre requête est idempotente, il vaut mieux privilégier la requête `GET`.
 
-### Coder l'envoi d'une requête par le navigateur - Le Front
+### Coder l'envoi d'une requête par le navigateur
 
 L'envoi d'une requête peut se faire :
 * En HTML grâce à la balise `<a>`
@@ -94,7 +94,7 @@ Cette méthode prend comme argument l'URL de la requête et, optionnellement, un
 
 Cette méthode est asynchrone et exploite les promesses plutot que les CallBack. La [documentation](https://developer.mozilla.org/fr/docs/Web/API/Fetch_API) présente plusieurs exemples d'utilisation de cette fonction.
 
-### Coder la reception d'une requête par le serveur web - Le Back
+### Coder la reception d'une requête par le serveur web
 
 Un serveur web est un programme qui s'exécute sur une machine connectée à Internet et qui est en attente de requêtes pour pouvoir y répondre.
 
