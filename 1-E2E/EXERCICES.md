@@ -27,6 +27,7 @@ Par exemple avec https://www.google.com
 Essayez des URL qui ne sont pas conformes et observez ce que dit le navigateur.
 * google.com/index.html
 * hhtttp:/ww.gogoooogle.com
+* cours NSI 
 
 
 ## Ressources non HTML

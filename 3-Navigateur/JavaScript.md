@@ -1,10 +1,9 @@
 # JavaScript - Principes de base
 
+D'un point de vue historique, [JavaScript](https://fr.wikipedia.org/wiki/JavaScript) a été principalement défini pour être exécuté dans un navigateur web. Pour autant, depuis quelques années, il a gagné en popularité et est aujourd'hui utilisé dans bien d'autres contextes (programmation côté serveur, scripts et macros dans des applications, etc.).
+
 Je propose ici une courte description des principes de base de JavaScript. L'objectif n'est pas d'expliquer toutes les constructions de ce languge mais juste de préciser ses grandes caractéristiques en donnant quelques liens utiles (malheureusement je ne connais pas de bon livre présentant ce langage).
 
-D'un point de vue historique, [JavaScript](https://fr.wikipedia.org/wiki/JavaScript) a été principalement défini pour être exécuté dans un navigateur web.
-
-Pour autant, depuis quelques années, il a gagné en popularité et est aujourd'hui utilisé dans bien d'autres contextes (programmation côté serveur, scripts et macros dans des applications, etc.).
 
 ## Un langage interprété
 
@@ -14,17 +13,26 @@ JavaScript est un langage interprété. Cela veut dire qu'il est exécuté par u
 Vous pouvez installer NodeJS sur n'importe quel ordinateur. Une fois installé, il suffit  d'exécuter la commande  `node` pour démarrer l'interpréteur. Celui-ci propose une invite de commande qui permet de saisir du code JavaScript qui sera automatiquement interprété.
 Il est aussi possible de demander à l'interpréteur d'exécuter l'intégralité d'un fichier qui contient du code JavaScript. Les instructions seront interprétées de la première jusqu'à la dernière.
 
-Tout navigateur web dispose d'un interpreteur JavaScript et peut ainsi exécuter du code JavaScript. Lorsqu'une page HTML référence du code JavaScript, celui-ci est téléchargé par le navigateur et interprété par un interpréteur. Il est important de noter que le navigateur va créer un interpréteur par page HTML. Tous les scripts référencé par cette page partagerons le même interpréteur et donc la même zone mémoire.
+Tout navigateur web dispose d'un interpreteur JavaScript et peut ainsi exécuter du code JavaScript. Lorsqu'une page HTML référence du code JavaScript, celui-ci est téléchargé par le navigateur et interprété par un interpréteur. Il est important de noter que le navigateur va créer un interpréteur par page HTML. Tous les scripts référencés par cette page partagerons le même interpréteur et donc la même zone mémoire.
 
 Notons enfin que JavaScript est un standard ECMA : [ECMA Script](https://developer.mozilla.org/fr/docs/Web/JavaScript/Language_Resources). On comprend alors qu'il y a des différences entre le standard et les interpréteurs (c.f. [compatibilité NodeJS / ECMA ](https://node.green/)).
 
-## Typage dynamique des variables
+## Variables et typage dynamique
+
+En JavaScript on considère que l'interpréteur dispose d'une zone de mémoire dans laquelle sont stockées les variables.
+Une variable a un nom (qui commence par un caractère alphabétique) et est définie par le mot clé `let` (ou `var` même si cette construction est de moins en moins considérée).
+
+Par exemple le code suivant définit deux variables `a` et `b`. La première a une valeur alors que la deuxième n'en a pas encore (elle vaut `undefined`).
+
+```javascript
+let a = 5;
+let b;
+```
 
 En JavaScript les variables sont typées mais le typage est dynamique, c'est à dire qu'il change lors de l'exécution.
-
 De plus, le typage est implicite et calculé par l'interpréteur tout au long de l'exécution du programme. De fait, le code source ne mentionne pas les types car ceux-ci peuvent changer.
 
-Le code suivant définit trois variables `a`, `b` et `c` (le mot clé `let` est utilisé pour définir une nouvelle variable). Dans ce code, les variables sont définies sans valeur (dans ce cas on dit que la valeur est `undefined` et que le type est lui aussi `undefined`). La suite du code affecte différentes valeurs de différents types (voir les commentaires).
+Le code suivant définit trois variables `a`, `b` et `c` sans valeur (dans ce cas on dit que la valeur est `undefined` et que le type est lui aussi `undefined`). La suite du code affecte différentes valeurs de différents types (voir les commentaires).
 
 ```javascript
 let a;
@@ -36,12 +44,13 @@ b = 10; // maintenant b est un nombre
 c = a + b; // c vaut 15
 ```
 
-Notons que les variables peuvent avoir pour valeur :
+Les variables peuvent avoir pour valeur :
 * un litéral (nombre, chaîne de caractères, booléen), le type dépend alors de la valeur (`number`, `string` et `boolean`)
+* un tableau (JavaScript popose aussi la gestion des tableaux, `let a = [];`)
 * un objet, le type est `Object`
 * une fonction, le type est `Function`
 
-L'opérateur binaire `===` teste l'égalité de type et de valeur entre deux variables.
+Notons que l'opérateur binaire `===` teste l'égalité de type et de valeur entre deux variables.
 
 ## Fonctionnel (mais pas pur)
 
@@ -57,6 +66,20 @@ function saySomething(msg) {
     } else {
         throw new Error(erroMsg);
     }
+}
+```
+
+Une fonction retourne toujours une valeur (mot clé `return`). Si le code de la fonction ne précise pas la valeur retournée, alors c'est `undefined` qui sera retourné. La fonction `saySomething` précédente retourne donc `undefined`.
+
+La fonction suivante retourne un boolean qui vaut `true` si le tableau passé en paramètre est trié 
+```javascript
+function isSorted(sortedArray) {
+    for (let i = 0 ; i < sortedArray.length - 1  ; i++) {
+        if (sortedArray[i] > sortedArray[i+1]) {
+            return false;
+        }
+    }
+    return true;
 }
 ```
 
@@ -236,7 +259,7 @@ function maCallBack() {
 setTimeout(maCallBack, 2000);
 ```
 
-D'autres mécanismes facilitant l'écriture de code asynchrone ont été proposés : _Promise_ et _async/await_. Ces mécanismes sont basés sur le principe de la __callBack__ et facilitent sont écriture dans le code.
+D'autres mécanismes facilitant l'écriture de code asynchrone ont été proposés : [_Promise_](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Promise) et [_async/await_](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Instructions/async_function). Ces mécanismes sont basés sur le principe de la __callBack__ et facilitent son écriture dans le code.
 
 ## Evénementiel
 
@@ -245,7 +268,7 @@ Chaque événement est caractérisé par un objet (l'événement). Cet objet a d
 
 Pour réagir aux événements, JavaScript utilise les __callBack__ et l'asynchronisme. L'idée est d'enregistrer des _callBacks_ sur des type d'événements. Celles-ci seront appelées lors que les événements de ce type seront émis.
 
-Le code suivant illustre ce propos avec l'ajout d'une __callBack__ anonyme sur l'événement de type `load` dont la cible est la fenêtre principale d'une page HTML (`window`). 
+Le code suivant illustre ce propos avec l'ajout d'une __callBack__ anonyme sur l'événement de type `load` dont la cible est la fenêtre principale d'une page HTML (`window`).
 
 ```javascript
 window.addEventListener('load', function () {

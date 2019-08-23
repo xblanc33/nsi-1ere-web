@@ -34,6 +34,14 @@ Chaque balise a une signification. Notre exemple contient les balises suivantes 
 * `<title>` : Cette balise permet de donner un titre à la page. Ce titre sera affiché par le navigateur dans l'onglet.
 * `<body>` : Cette balise représente le contenu de la page. Ce contenu sera affiché par le navigateur.
 
+### A retenir
+
+HTML
+* est le langage des pages web
+* permet de définir le fond et la forme des pages web
+* est composé de balises (ouvrantes et fermantes), `<html>`, `<head>`, `<title>` et `<body>` sont les principales
+* est structuré comme un abre
+
 
 ## Quelques balises HTML intéressantes
 
@@ -89,6 +97,15 @@ Ces balises sont extrêmement utiles car elles servent à créer des formulaires
 
 Le formulaire présenté contient un champ de saisie de texte et spécifie que la soumission du formulaire (touche entrée) va envoyer une requête POST vers le serveur web (nous expliquerons les détails des formulaires dans la partie 4-Serveur).
 
+### A retenir
+
+Les balises HTML les plus connues sont
+* `<a>`
+* permet de définir le fond et la forme des pages web
+* est composé de balises (ouvrantes et fermantes), `<html>`, `<head>`, `<title>` et `<body>` sont les principales
+* est structuré comme un abre
+
+
 ## Page HTML et arbre DOM
 
 Un navigateur web (Chrome, par exemple) affiche une page HTML.
@@ -98,3 +115,11 @@ Tous les navigateurs ont la même représentation interne en mémoire d'une page
 Cette structure est arborescente. Chaque balise HTML est représentée par un élément (DOM Element).
 
 C'est cette structure qui pourra être manipulée en JavaScript et c'est sur cette structure que les Event seront définis.
+
+### A retenir
+
+Dans la mémoire du navigateur : 
+* Les balises HTML sont représentés sous forme d'un arbre 
+* Chaque balise est représenté par un DOM Element et est un noeud de l'arbre 
+  
+Cet arbre est manipulable en JavaScript
