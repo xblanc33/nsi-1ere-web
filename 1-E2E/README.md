@@ -127,11 +127,10 @@ Différents traitements peuvent être exécutés en réponse à un évènement d
 * envoyer une requête vers le serveur et demander des informations qui seront intégrées à la page actuelle
 * changer la page HTML sans même envoyer de requête vers le serveur (faire apparaître un éléments caché, lire une vidéo ou une chanson, etc.)
 
-La figure suivante montre des interactions types.
+La figure suivante montre les 3 traitements qui peuvent être exécutés en réponse à un évènement d'intéraction. On considère que l'utilisateur a déjà chargé la page HTML avec laquelle il interagit.
 
 ![](./img/interactionsType.png)
 
-Il est important de noter que les interactions sont gérées de manière asynchrone par le navigateur. Cela veut dire qu'elles ne sont par réalisées dans l'ordre tel que demandé par l'utilisateur. Il se peut donc que le traitement de la première interactions effectuée par l'utilisateur soit réalisé après que l'utilisateur ait effectué d'autres interactions.
 
 ### A retenir
 
