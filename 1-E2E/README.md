@@ -138,4 +138,4 @@ Les interactions de l'utilisateur sont gérées par le navigateur. Pour chaque i
 
 Les traitements associés aux interactions peuvent être de différents types (demander au serveur une nouvelle page et l'afficher, demander au serveur des nouvelles données et les intégrer à la page, effectuer des modifications de la page sans réaliser de communication avec le serveur, etc.)
 
-Les traitements réalisés par le navigateur web sont asynchrone. C'est à dire que le navigateur les réalise dans l'ordre qu'il veut et quand il a le temps.
+Les traitements réalisés par le navigateur web sont asynchrones. C'est à dire que le navigateur les réalise dans l'ordre qu'il veut et quand il a le temps.
